@@ -10,10 +10,10 @@ import UIKit
 extension UIViewController {
     
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.65))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.60))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top:0, leading: 16, bottom: 0, trailing: 16)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0) , heightDimension: .fractionalWidth(0.65))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0) , heightDimension: .fractionalWidth(0.60))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item,count: 1)
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0)
@@ -24,7 +24,7 @@ extension UIViewController {
     
     func preparePhotoDetailVC(with result: RoverPhotos) {
         guard let detailVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "PhotoDetailViewController") as? PhotoDetailViewController else {
-             fatalError("instantiate issue")
+             fatalError("There is a problem with instantiate")
          }
          detailVC.image = result.imgSrc
          detailVC.name = result.rover.name
@@ -45,5 +45,10 @@ extension UIViewController {
             button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
         ])
         button.layer.cornerRadius = size / 2
+        button.layer.shadowColor = UIColor.lightGray.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        button.layer.shadowRadius = 5.0
+        button.layer.masksToBounds = false
+        button.layer.shadowOpacity = 0.5
     }
 }
