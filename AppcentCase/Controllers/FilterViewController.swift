@@ -35,7 +35,7 @@ final class FilterViewController: UIViewController {
     
     @objc private func filterButtonAction(){
         if currentFilter == "" {
-            let alert = UIAlertController(title: "Error", message: "You try to filter before select the camera type.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "You are trying to filter without selecting the camera type ", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             DispatchQueue.main.async {
                 self.present(alert, animated: true, completion: nil)
@@ -87,11 +87,11 @@ extension FilterViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = activeCameras[indexPath.row]
-        cell?.backgroundColor = .white
-        cell?.textLabel?.textColor = .black
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = activeCameras[indexPath.row]
+        cell.backgroundColor = .white
+        cell.textLabel?.textColor = .black
         
-        return cell!
+        return cell
     }
 }

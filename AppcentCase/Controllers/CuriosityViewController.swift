@@ -28,7 +28,6 @@ final class CuriosityViewController: UIViewController, FilterViewControllerDeleg
     private var queryParams = ["api_key":Constants.apiKEY]
     private let activeCameras = ["FHAZ","RHAZ","MAST","CHEMCAM","MAHLI","MARDI","NAVCAM"]
     
-    
     private let filterButton : UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
