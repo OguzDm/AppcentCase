@@ -26,11 +26,11 @@ extension UIViewController {
         guard let detailVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "PhotoDetailViewController") as? PhotoDetailViewController else {
              fatalError("instantiate issue")
          }
-         detailVC.image = result.img_src
+         detailVC.image = result.imgSrc
          detailVC.name = result.rover.name
-         detailVC.date = result.earth_date
-         detailVC.launchDate = result.rover.launch_date
-         detailVC.landingDate = result.rover.landing_date
+         detailVC.date = result.earthDate
+         detailVC.launchDate = result.rover.launchDate
+         detailVC.landingDate = result.rover.landingDate
          detailVC.camera = result.camera.name
          present(detailVC, animated: true, completion: nil)
     }

@@ -13,9 +13,16 @@ struct RoverModel: Codable {
 
 struct RoverPhotos: Codable {
     let camera: Camera
-    let img_src: String
-    let earth_date: String
+    let imgSrc: String
+    let earthDate: String
     let rover: Rover
+    
+    enum CodingKeys: String, CodingKey {
+        case camera
+        case imgSrc = "img_src"
+        case earthDate = "earth_date"
+        case rover
+    }
 }
 
 struct Camera: Codable {
@@ -24,8 +31,15 @@ struct Camera: Codable {
 
 struct Rover: Codable {
     let name: String
-    let landing_date: String
-    let launch_date: String
+    let landingDate: String
+    let launchDate: String
     let status: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case landingDate = "landing_date"
+        case launchDate = "launch_date"
+        case status
+    }
 }
 

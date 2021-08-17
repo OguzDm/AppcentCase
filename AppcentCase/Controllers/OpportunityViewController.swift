@@ -92,7 +92,7 @@ extension OpportunityViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoverCollectionViewCell.reuseIdentifier, for: indexPath) as! RoverCollectionViewCell
         
-        cell.configure(image: PHOTOS[indexPath.item].img_src)
+        cell.configure(image: PHOTOS[indexPath.item].imgSrc)
         
         return cell
     }
